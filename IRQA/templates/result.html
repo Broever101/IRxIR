@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  {% load test_tags %}
+  <head>
+    <meta charset="utf-8">
+    <title>Result</title>
+  </head>
+  <style>
+    table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+  <body>
+    <h1>Answers</h1>
+    <table>
+      <th>Book</th>
+      <th>Chapter</th>
+      <th>Context</th>
+      <th>Answer</th>
+      <th>Score</th>
+      {% for r in result %} 
+      <tr>  
+        <td>{{r.book}}</td>    
+        <td>{{r.chapter}}</td>
+        <td>{{r.context}}</td>
+        <td>{{r.answer}}</td>
+        <td>{{r.score}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+  </body>
+</html>

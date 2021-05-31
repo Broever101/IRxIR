@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>Bible Information Retrieval</h1>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      
+      <p>Ask your question:</p>
+      <input type="text" name="query">
+      <br>
+
+      <input type="submit" value='Get Predictions'>
+    </form>
+  </body>
+</html>
