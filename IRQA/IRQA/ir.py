@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 from pandas.core.frame import DataFrame
 import numpy as np
 import json
-from numba import jit
+#from numba import jit
 import pandas as pd
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
