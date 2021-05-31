@@ -2,7 +2,7 @@ import os
 import re
 from typing import Any, Dict, List 
 from pandas.core.frame import DataFrame
-import cupy as np
+import numpy as np
 import json
 import pandas as pd
 from nltk.stem import PorterStemmer
