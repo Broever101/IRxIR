@@ -6,7 +6,10 @@ from IRQA.ir import Query, DocumentRetrieval, PassageRetrieval
 
 model_ckpt = 'distilbert-base-uncased-distilled-squad'
 
+print("Initializing QA model...")
 qa_model = QuestionAnswering(model_ckpt, model_ckpt)
+print("Done.")
+print("Initializing Documents...")
 start = time.time()
 dr = DocumentRetrieval()
 end = time.time()

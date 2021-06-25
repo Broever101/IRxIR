@@ -34,9 +34,17 @@ class Document:
       return " ".join(self.text)
 
 class Query:
-    def __init__(self, text) -> None:
+    def __init__(self, text, ps: PorterStemmer = STEMMER) -> None:
         #plain text
         self.text = text
+        self.ps = ps
+    
+    def stem(self) -> str:
+      stemmed = ""
+      for word in self.text.split(' '):
+        stemmed += self.ps.stem(word) + " "
+
+      return stemmed.strip()
 
     def __str__(self) -> str:
       return self.text
@@ -96,7 +104,7 @@ class DocumentRetrieval:
       return df
 
     def query_vectorizer(self, query: Query) -> Any:
-      q = [str(query)]
+      q = [query.stem()]
       q_vec = self.vectorizer.transform(q).toarray().reshape(self.vocab_len,)
       return q_vec
 
