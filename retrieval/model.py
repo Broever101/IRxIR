@@ -1,4 +1,3 @@
-from pprint import pprint
 from typing import List, Dict
 from qa import QuestionAnswering
 from ir import Query, DocumentRetrieval, PassageRetrieval
@@ -18,7 +17,3 @@ def predict(question: str) -> List[Dict]:
         result = qa_model.answer(passage, query)
         results.append(result)
     return results 
-
-if __name__ == "__main__":
-    query = "Who is Judah"
-    pprint(predict(query))
